@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Todo App</title>
+</head>
+<body>
+    <div id="app">
+        <div class="title">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="navigation">
+            <div class="all_todo isActive" id="all_todo">
+                <p>All</p>
+            </div>
+            <div class="active_todo" id="active_todo">
+                <p onclick="activetoDo()">Active</p>
+            </div>
+            <div class="completed_todo" id="completed_todo">
+                <p v-on:click="completed()">Completed</p>
+            </div>
+        </div>
+        <div class="container_todoContent">
+            <div class="insert_task">
+                <input type="text" placeholder="add details" id="newTask" class="newTask">
+                <div id="addTaskButton" class="addTaskButton" v-on:click="addTodo()">Add</div>
+            </div>
+            <div class="todo_content">
+                <ul class="toDo" id="toDo">
+                    <li class="rowToDo">
+                        <!-- <input type="checkbox" name="nameOfTodo" id="checkbox">
+                        <label for="nameOfTodo">Do this coding challenge</label> -->
+                    </li>
+                </ul>
+                <div class="btnRemove">
+                    <div id="btnRemove">delete All</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data:{
+                title: "#todo",
+            },
+            methods:{
+                addTodo: function(){
+                    var toDo = document.getElementById("toDo");
+            var newTask = document.getElementById("newTask");
+             
+             // creating checkbox element
+             var checkbox = document.createElement('input');
+              
+             // Assigning the attributes
+             // to created checkbox
+             checkbox.type = "checkbox";
+             checkbox.name = "nameOfTodo";
+             checkbox.id = "checkbox";
+              
+             // creating label for checkbox
+             var label = document.createElement('label');
+             label.id = "labelId";
+              
+             // assigning attributes for
+             // the created label tag
+            //  label.htmlFor = "id";
+            
+            //get input value
+            var text = newTask.value;
+
+            //creating li
+            var li = document.createElement('li');
+            li.id = "rowToDo";
+            li.classList.add("rowToDo");
+
+            // appending the created text to
+            // the created label tag
+            label.innerHTML = text;
+              
+            // appending the checkbox the li
+            // and label to ul
+             
+             toDo.appendChild(li);
+             toDo.appendChild(checkbox);
+             toDo.appendChild(label);
+                },
+
+                activeTodo: function(){
+
+                },
+                completed: function(){
+                    var all_todo = document.getElementById("all_todo");
+                    var active_todo = document.getElementById("active_todo");
+                    var completedTodo = document.getElementById("completed_todo");
+                    var btnRemove = document.getElementById("btnRemove");
+                    var ease = completedTodo.classList.add("isActive");
+                    if(completedTodo.classList.contains("isActive")){
+                        btnRemove.style.display = "flex";
+                        all_todo.classList.remove("isActive");
+                        active_todo.classList.remove("isActive");
+                        // completedTodo.style.transition = "300ms ease-in-out";
+                    }
+                },
+            }
+        })
+    </script>
+</body>
+</html>

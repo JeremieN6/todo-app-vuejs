@@ -1,0 +1,115 @@
+@import url('https://fonts.cdnfonts.com/css/raleway-5');
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+
+:root{
+    /*COLORS*/
+    --grey-color: #BDBDBD;
+    --blue-color: #2F80ED;
+    /*FONTS*/
+    --font-raleway: 'Raleway';
+    --font-montserrat: 'Montserrat';
+}
+        
+li{
+    list-style: none;
+}
+.btnRemove{
+    display: none;
+}
+.title{
+    font-family: var(--font-raleway);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: -0.045em;
+}
+.navigation{
+    display: flex;
+    justify-content: space-around;
+    font-family: var(--font-montserrat);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 1px solid var(--grey-color);
+    width: 90%;
+    margin: 3em auto;
+}
+.insert_task{
+    display: flex;
+    justify-content: center;
+}
+.newTask{
+    width: 60%;
+    height: 3em;
+    border: 1px solid var(--grey-color);
+    border-radius: 12px;
+}
+input::placeholder{
+    font-family: var(--font-montserrat);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    /* Gray 3 */
+
+    color: #828282;
+}
+.addTaskButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    width: 5em;
+    height: auto;
+    color: white;
+    font-family: var(--font-montserrat);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    background: var(--blue-color);
+    box-shadow: 0px 2px 6px rgba(127, 177, 243, 0.4);
+    border-radius: 6px;
+}
+ul{
+    font-family: var(--font-montserrat);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+.isActive{
+    display: inline-block;
+    padding-top: 1px;
+    border-bottom: 3px solid var(--blue-color);
+    /* transition: 300ms ease-in-out; */
+}
+@media (min-width:768px){
+    .navigation{
+        display: flex;
+        justify-content: space-around;
+        font-family: var(--font-montserrat);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        border-bottom: 1px solid var(--grey-color);
+        width: 50%;
+        margin: 3em auto;
+    }
+    .toDo{
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+    }
+}
